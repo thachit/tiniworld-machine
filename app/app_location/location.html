@@ -1,0 +1,83 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12" ng-controller="LocationCtrl">
+			<h1 class="page-header">Location Management</h1>
+
+			<form class="form-horizontal" ng-submit="AddNewLocation()">
+				<div class="form-group col-xs-12 col-sm-3">
+					<label class="control-label">Select a location:</label>
+					<button class="btn btn-default" data-toggle="modal" data-target="#newLocationModal" type="button"><i class="glyphicon glyphicon-plus"></i></button>
+					<button class="btn btn-default" type="submit" ng-click="RemoveLocation()"><i class="glyphicon glyphicon-minus"></i></button>
+
+				    <select class="form-control" size="8" 
+				    		ng-model="selectedLocation"
+				    		ng-options="x.name for x in LocationCollection">
+				    </select>
+
+				</div>
+
+				<div class="form-group col-xs-12 col-sm-7 col-sm-offset-2">
+					<div class="form-group">
+						<label for="inputName" class="col-sm-2 control-label">Name</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="inputName" name="Name" 
+								ng-model="selectedLocation.name"
+								placeholder="Center's name" required>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="inputCenter" class="col-sm-2 control-label">Centers: </label>
+						<div class="col-sm-10">
+							<select id="location-centers-selected" multiple="multiple" 
+									ng-model="selectedCenter">
+								<option value="1">Option 1</option>
+								<option ng-repeat="x in CenterCollection" value="{{x.name}}">{{x.name}}</option>
+   
+							</select>
+						</div>
+					</div>
+					
+
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="submit" class="btn btn-default">Save</button>
+						</div>
+					</div>
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade bs-example-modal-sm" id="newLocationModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" ng-controller="LocationCtrl">
+	<div class="modal-dialog modal-md" role="document">
+
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				
+				<h4 class="modal-title" id="myModalLabel">Add New Location</h4>
+			</div>
+			<form class="form-horizontal" ng-submit="AddNewLocation()">
+				<div class="modal-body">
+					
+					<div class="form-group">
+						<label for="inputAddress" class="col-sm-2 control-label">Center Name: </label>
+						<div class="col-sm-9">
+							<input ng-model="selectedLocation.name" type="text" class="form-control" id="inputName" placeholder="Center's Name">
+						</div>
+					</div>
+					
+				</div>
+				<div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        <button type="submit" class="btn btn-primary">Save</button>
+		      	</div>
+	      	</form>
+		</div>
+	</div>
+</div>
