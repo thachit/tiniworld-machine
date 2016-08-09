@@ -1,20 +1,19 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-lg-12" ng-controller="CenterCtrl">
-			<h1 class="page-header">Center Management</h1>
+		<div class="col-lg-12" ng-controller="SupplierCtrl">
+			<h1 class="page-header">Supplier Management</h1>
 
 			<div>
-				<a ng-href="/#!/center/new" type="button" class="btn btn-sm btn-success">
+				<a ng-href="/#!/supplier/new" type="button" class="btn btn-sm btn-success">
 					<i class="glyphicon glyphicon-plus"></i> Add an item
 				</a>				
 			</div>
-			<table st-table="displayedCollection" st-safe-src="CenterCollection" class="table table-striped table-bordered table-hover table-responsive">
+			<table st-table="displayedCollection" st-safe-src="SupplierCollection" class="table table-striped table-bordered table-hover table-responsive">
 				<thead>
 					<tr>
 						<th>Name</th>						
-						<th>Manager</th>
-						<th>Manager's Phone</th>
 						<th>Address</th>
+						<th>Phone</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
@@ -22,23 +21,17 @@
 					<tr ng-repeat="row in displayedCollection">
 						<td ng-model="row.name">{{row.name}}</td>	
 
-						<td ng-model="row.manager.name">
-							{{row.manager.name}}
-						</td>
-
-						<td>
-							<a ng-model="row.manager.phone" ng-href="tel:{{row.manager.phone}}">{{row.manager.phone}}</a>
-						</td>
-
 						<td ng-model="row.address">{{row.address}}</td>
 
+						<td ng-model="row.phone">{{row.phone}}</td>
+
 						<td>
 
-							<a ng-href="/#!/center/edit/{{ row.$id }}" type="button" class="btn btn-sm btn-success">
+							<a ng-href="/#!/supplier/edit/{{ row.$id }}" type="button" class="btn btn-sm btn-success">
 								<i class="glyphicon glyphicon-pencil"></i>
 							</a>
 
-							<button type="button" ng-click="RemoveCenter(row)" class="btn btn-sm btn-danger">
+							<button type="button" ng-click="RemoveSupplier(row)" class="btn btn-sm btn-danger">
 								<i class="glyphicon glyphicon-remove-circle"></i>
 							</button>
 						</td>

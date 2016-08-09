@@ -28,12 +28,9 @@
 
 					<div class="form-group">
 						<label for="inputCenter" class="col-sm-2 control-label">Centers: </label>
-						<div class="col-sm-10">
-							<select id="location-centers-selected" multiple="multiple" 
-									ng-model="selectedCenter">
-								<option value="1">Option 1</option>
-								<option ng-repeat="x in CenterCollection" value="{{x.name}}">{{x.name}}</option>
-   
+						<div class="col-sm-10" id="centerSelect">
+							<select id="location-centers-selected" multiple="multiple" ng-model="selectedCenter">								
+								<option ng-repeat="x in CenterCollection" value="{{x.name}}">{{x.name}}</option>    
 							</select>
 						</div>
 					</div>

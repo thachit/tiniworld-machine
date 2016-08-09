@@ -13,22 +13,28 @@
 	}]);
 
 	center.controller('LocationCtrl', function($scope, $firebaseArray, $location, $routeParams) {
-		// Start Multiselect when document ready
-		$scope.$on('$viewContentLoaded', function() {
-			$scope.CenterCollection.$loaded().then(function(x) {
-				    $('#location-centers-selected').multiselect();
-				}).catch(function(error) {
-				    console.log("Error:", error);
-				});
-			          
-    	});
-
 		// Bind the CenterCollection to the firebase provider.
 		var ref = firebase.database().ref('locations');		
 		$scope.LocationCollection = $firebaseArray(ref);
 
 		var refCenter = firebase.database().ref('centers');		
 		$scope.CenterCollection = $firebaseArray(refCenter);
+
+		// Start Multiselect when document ready
+		$scope.$on('$viewContentLoaded', function() {
+			/*$('#centerSelect').append('<select id="location-centers-selected" multiple="multiple"'+
+														'ng-model="selectedCenter">'+
+														'<option ng-repeat="x in CenterCollection" value="{{x.name}}">{{x.name}}</option>'+
+												'</select>');*/
+		
+			$scope.CenterCollection.$loaded().then(function(x) {				
+				    console.log($('#centerSelect').html());
+					$('#location-centers-selected').multiselect();
+				}).catch(function(error) {
+				    console.log("Error:", error);
+				});
+			          
+    	});
 
 		$scope.AddNewLocation = function(){
 			var locationName = $scope.selectedLocation.name;
