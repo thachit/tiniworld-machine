@@ -7,7 +7,11 @@
 			<section class="col-xs-11 col-md-12">
 				<ul id="thumbs">
 				<li ng-repeat="image in newMachine.pictures" id="{{image.name}}">
-					<a class="fancybox" rel="group" ng-href="{{image.url}}"><img ng-src="{{image.url}}" alt="" /></a>
+					<a class="fancybox" rel="group" ng-href="{{image.url}}"><img ng-src="{{image.url}}" alt="" /></a><br>
+
+					<button type="button" class="btn-sm btn-warning" ng-click="RemoveImage(image, newMachine)">
+							<i class="glyphicon glyphicon-remove"></i>
+					</button>
 				</li>
 			</ul>
 			</section>

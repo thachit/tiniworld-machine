@@ -70,6 +70,7 @@
 		$scope.RemoveLocation = function() {
 			//console.log($scope.selectedLocation);
 			$scope.LocationCollection.$remove($scope.selectedLocation);
+			$scope.selectedLocation = $scope.LocationCollection[0];
 
 		};
 	});

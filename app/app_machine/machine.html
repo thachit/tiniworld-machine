@@ -11,7 +11,8 @@
 			<table st-table="displayedCollection" st-safe-src="MachineCollection" 
 			class="table table-striped table-bordered table-hover table-responsive">
 			<thead>
-				<tr>					
+				<tr>	
+					<th>Image</th>
 					<th>Name</th>
 					<th>Centers</th>
 					<th>Status</th>
@@ -19,12 +20,48 @@
 					<th>Last Updated</th>
 					<th>Actions</th>
 				</tr>
+				<tr>
+					<th>
+						
+					</th>
+					<th>
+						<input st-search="name" placeholder="search Name" 
+						class="input-sm form-control" type="search"/>
+					</th>
+					<th>
+						<select ng-model="newMachine.center" 
+							st-input-event="change" st-search="center"
+							class="form-control" id="inputCenter">
+							<option value="">Select a Center</option>
+							<option ng-repeat="x in CenterCollection" value="{{x.name}}">{{x.name}}</option>
+						</select>
+					</th>
+					<th>
+						<select ng-model="newMachine.state" 
+								st-input-event="change" st-search="state"
+								class="form-control" id="inputState">
+								<option value="">Select a Status</option>
+								<option ng-repeat="x in state_options" value="{{x.value}}">{{x.name}}</option>
+						</select>
+					</th>
+					<th>
+						<input placeholder="search Issue" st-search="issue"
+						class="input-sm form-control" type="search"/>
+					</th>
+					<th>
+						<input placeholder="search Last update" st-search="last_update"
+						class="input-sm form-control" type="search"/>
+					</th>
+					<th>
+						
+					</th>
+				</tr>
 			</thead>
 			<tbody>
 				<tr ng-repeat="row in displayedCollection">
-						<!-- <td ng-repeat="image in row.pictures" ng-if="image.cover">
+						<td ng-init="image = row.pictures[0]">
 							<img ng-model="image.url" ng-src="{{image.url}}" class="img-rounded" alt="{{row.name}}" width="150px">
-						</td>-->
+						</td>
 
 						<td ng-model="row.name">{{row.name}}</td>	
 
@@ -84,7 +121,7 @@
 
 			<tfoot>
 				<tr>
-					<td colspan="6" class="text-center">
+					<td colspan="7" class="text-center">
 						<div st-pagination="" st-items-by-page="10" st-displayed-pages="7"></div>
 					</td>
 				</tr>

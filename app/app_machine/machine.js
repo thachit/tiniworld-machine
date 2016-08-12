@@ -142,6 +142,16 @@
 
 		};
 
+		$scope.RemoveImage = function(image, machine) {
+			
+			storageRef.child('machines/' + image.name).delete().then(function(){
+				var index = machine.pictures.indexOf(image);
+				machine.pictures.splice(index, 1);
+				$scope.MachineCollection.$save(machine);
+			});			
+		};
+
+
 
 		// UPLOAD IMAGES
 		$scope.uploadFiles = function (files) {
