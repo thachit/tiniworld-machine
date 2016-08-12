@@ -21,7 +21,7 @@
 
 	}]);
 
-	machine.controller('MachineCtrl', function($scope, $firebaseAuth, $firebaseArray, $location, $routeParams) {
+	machine.controller('MachineCtrl', function($scope, $filter, $firebaseAuth, $firebaseArray, $location, $routeParams) {
 		// Get Authentication
 		$scope.authObj = $firebaseAuth();
 		var firebaseUser = $scope.authObj.$getAuth();
@@ -142,12 +142,26 @@
 
 		};
 
+		function deleteImage(image, machine){
+
+			var index = machine.pictures.indexOf(image);
+			machine.pictures.splice(index, 1);
+			$scope.MachineCollection.$save(machine);
+		}
+
 		$scope.RemoveImage = function(image, machine) {
 			
 			storageRef.child('machines/' + image.name).delete().then(function(){
-				var index = machine.pictures.indexOf(image);
-				machine.pictures.splice(index, 1);
-				$scope.MachineCollection.$save(machine);
+				deleteImage(image, machine);
+
+			}).catch(function(error) {
+				switch (error.code) {
+				    case 'storage/object-not-found':
+				      deleteImage(image, machine);
+				      break;
+				    default:
+        				console.log(error);
+				}
 			});			
 		};
 

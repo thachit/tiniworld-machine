@@ -63,3 +63,10 @@ ul#thumbs img{
   position:relative;
   z-index:1;    
 }
+
+.wordwrap { 
+    white-space: nowrap;
+    width: 12em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

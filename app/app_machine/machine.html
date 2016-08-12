@@ -16,7 +16,7 @@
 					<th>Name</th>
 					<th>Centers</th>
 					<th>Status</th>
-					<th>Issue</th>
+					<th st-ratio="20">Issue</th>
 					<th>Last Updated</th>
 					<th>Actions</th>
 				</tr>
@@ -86,19 +86,13 @@
 
 						</td>	
 
-						<td ng-model="row.issue">
-							{{row.issue}}
+						<td ng-model="row.issue" st-ratio="20" >
+							<p class="wordwrap">{{row.issue}}</p>
 						</td>	
 
 						<td ng-model="row.last_update">
 							<a href="mailto:{{row.last_update}}" target="_top">{{row.last_update}}</a>
 						</td>
-
-						<!-- 
-						Running: green <button type="button" class="btn btn-success disabled">Success</button>
-						Stopping, wait for repair: Red <button type="button" class="btn btn-danger disabled">Danger</button>
-						Fixed: gold <button type="button" class="btn btn-warning disabled">Warning</button>
-					-->
 
 					<td>
 
