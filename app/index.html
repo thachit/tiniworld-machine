@@ -25,6 +25,14 @@
 
   <link rel="stylesheet" href="bower_components/bootstrap-multiselect-master/dist/css/bootstrap-multiselect.css" type="text/css"/>
 
+  <!-- Fancybox -->
+  <link rel="stylesheet" href="components/fancybox/source/jquery.fancybox.css" type="text/css"/>
+
+  <!-- Multi Select -->
+  <link rel="stylesheet" href="bower_components/bootstrap-multiselect-master/dist/css/bootstrap-multiselect.css" type="text/css"/>
+
+  <link rel="stylesheet" href="app.css" type="text/css"/>
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -91,6 +99,12 @@
                 <li>
                   <a ng-href="/#!/location"><i class="fa fa-dashboard fa-fw"></i> Location</a>
                 </li>
+                <li>
+                  <a ng-href="/#!/supplier"><i class="fa fa-dashboard fa-fw"></i> Supplier</a>
+                </li>
+                <li>
+                  <a ng-href="/#!/machine"><i class="fa fa-dashboard fa-fw"></i> Machine</a>
+                </li>
               </ul>
             </div>
             <!-- /.sidebar-collapse -->
@@ -134,10 +148,16 @@
 
     <!-- Smart Table -->
     <script src="bower_components/angular-smart-table/dist/smart-table.min.js"></script>
+    <!-- ng-file-upload -->
+    <script src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
 
-    <!-- Multiselect -->
-    <script src="bower_components/bootstrap-multiselect-master/dist/js/bootstrap-multiselect.js"></script>
+    <!-- Fancybox -->
+    <script src="components/fancybox/source/jquery.fancybox.js"></script>
 
+    <!-- Multi Select -->
+    <script src="bower_components/bootstrap-multiselect-master/dist/js/bootstrap-multiselect.js"></script>    
+    
     <!-- GOOGLE FIREBASE -->
     <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
     <!-- Angular Fire -->
@@ -162,6 +182,8 @@
     <script src="app_location/location.js"></script>
     <!-- Supplier Module -->
     <script src="app_supplier/supplier.js"></script>
+    <!-- Machine Module -->
+    <script src="app_machine/machine.js"></script>
 
     <script src="components/version/version.js"></script>
     <script src="components/version/version-directive.js"></script>

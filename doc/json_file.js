@@ -112,41 +112,14 @@ firebase.database().ref().update(updates);
 
 histories = [
 	{
-		machine_id: "-KOErwRYbVlwOQuvUTGU", // Generate by Firebase DB
-		common_issues: "May bi treo CPU",
-		date: "2016-01-10 08:15:22",
-		state: "active",
-		update_by: "nguyencothach1989@gmail.com",
-		comment: "Dua may vao hoat dong"
-	},
-
-	{
-		machine_id: "-KOErwRYbVlwOQuvUTGU", // Generate by Firebase DB
-		common_issues: "May bi treo CPU",
-		date: "2016-01-10 08:15:22",
-		state: "fixed",
-		update_by: "nguyencothach1989@gmail.com",
-		comment: "Da thay mainboard moi"
-	},
-
-	{
-		machine_id: "-KOErwRYbVlwOQuvUTGU" // Generate by Firebase DB
-		common_issues: "May bi treo CPU",
-		date: "2016-01-02 08:15:22",
-		state: "waiting-for-repair",
-		update_by: "nguyencothach1989@gmail.com",
-		comment: "Cho mua phu kien"
-	},
-
-	{
-		machine_id: "-KOErwRYbVlwOQuvUTGU", // Generate by Firebase DB
-		common_issues: "May bi treo CPU",
-		date: "2016-01-01 08:15:22",
-		state: "in-active",
-		update_by: "nguyencothach1989@gmail.com",
-		comment: "May bi hu, ngat de sua chua"
-	}
-	]
+	    "comment" : "May bi hu, ngat de sua chua",
+	    "date" : "2016-01-01 08:15:22",
+	    "issue" : "May bi treo CPU",
+	    "machine_id" : "-KOra137Yr3BIHr0t9Pa",
+	    "machine_name" : "Machine 2",
+	    "state" : "in-active",
+	    "update_by" : "nguyencothach1989@gmail.com"
+  	}]
 
 var newPostKey = firebase.database().ref().child('histories').push().key;
 var updates = {}

@@ -7,11 +7,13 @@ angular.module('myApp', [
   // Third party modules,
   'firebase',
   'smart-table',
+  'ngFileUpload',
   // App modules
   'myApp.auth',
   'myApp.center',
   'myApp.location',
   'myApp.supplier',
+  'myApp.machine',
   'myApp.version'
   ])
 .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
