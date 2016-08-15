@@ -1,0 +1,2 @@
+1. Delete Machine => Delete document, image on Storage.
+2. Responsive for website.
